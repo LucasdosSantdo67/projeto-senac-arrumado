@@ -1,0 +1,319 @@
+:root {    
+    --primary: #4a90e2;
+    --lost: #e74c3c;
+    --found: #2ecc71;
+    --adoption: #9b59b6;
+    --dark: #2c3e50;
+    --light: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: var(--dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Barra de Navegação */
+.navbar {
+    background: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: var(--dark);
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+    color: var(--primary);
+}
+
+.btn-nav {
+    background: var(--primary);
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: opacity 0.2s;
+}
+
+.btn-nav:hover {
+    opacity: 0.9;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #4a90e2 0%, #50e3c2 100%);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 { 
+    font-size: 2.3rem; 
+    margin-bottom: 10px; 
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Formulário */
+.card-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin: 30px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"], 
+.form-group input[type="tel"], 
+.form-group select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--primary);
+}
+
+/* Layout dos Botões Criados para Foto */
+.botoes-foto-container {
+    display: flex;
+    gap: 15px;
+}
+
+.botoes-foto-container .btn-camera-container {
+    flex: 1;
+}
+
+.btn-camera-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 20px 15px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-camera-container:hover {
+    background-color: #f1f5f9;
+    border-color: var(--primary);
+}
+
+/* Estado visual após selecionar arquivo válido */
+.btn-camera-container.foto-selecionada {
+    border-color: var(--found);
+    background-color: #f0fff4;
+}
+
+.icon-camera {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.text-camera {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.btn-camera-container input[type="file"] {
+    display: none;
+}
+
+/* Botão Enviar */
+.btn-submit {
+    background: var(--dark);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background: #34495e;
+}
+
+/* Grid de Cards */
+.mural-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.pet-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+}
+
+.pet-img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.pet-info {
+    padding: 20px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.status-badge.perdido { background-color: var(--lost); }
+.status-badge.encontrado { background-color: var(--found); }
+.status-badge.adocao { background-color: var(--adoption); } 
+
+.pet-info h3 { margin-bottom: 8px; font-size: 1.3rem;}
+.pet-info p { font-size: 0.9rem; color: #555; margin-bottom: 6px; }
+
+.btn-contact {
+    display: block;
+    text-align: center;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: opacity 0.2s;
+}
+
+.btn-contact:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .container { padding: 15px; }
+    .hero h1 { font-size: 2rem; }
+    .card-form { padding: 20px; }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        flex-direction: column;    
+        gap: 12px;                 
+        padding: 15px;
+        text-align: center;
+    }
+
+    .navbar nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;   
+        align-items: center;
+        gap: 15px;                 
+    }
+
+    .navbar nav a {
+        margin: 0;                 
+        font-size: 0.95rem;
+        white-space: nowrap;       
+    }
+
+    .btn-nav {
+        padding: 6px 12px;         
+        font-size: 0.9rem;
+    }
+
+    .botoes-foto-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero { padding: 35px 15px; }
+    .hero h1 { font-size: 1.6rem; }
+    .hero p { font-size: 0.95rem; }
+    .form-row { flex-direction: column; gap: 0; }
+}
